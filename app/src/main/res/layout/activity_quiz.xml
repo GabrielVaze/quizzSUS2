@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#f1f1f1">
+
+    <TextView
+        android:id="@+id/textViewQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pergunta"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radioOptionA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Opção A" />
+
+        <RadioButton
+            android:id="@+id/radioOptionB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Opção B" />
+
+        <RadioButton
+            android:id="@+id/radioOptionC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Opção C" />
+
+        <RadioButton
+            android:id="@+id/radioOptionD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Opção D" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Próxima"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/buttonMainMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu Principal" />
+
+</LinearLayout>
