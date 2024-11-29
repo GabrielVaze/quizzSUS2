@@ -1,3 +1,5 @@
+// QuizActivity.java
+
 package com.example.quizzsus.ui;
 
 import android.content.Intent;
@@ -13,6 +15,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.quizzsus.MainActivity;
 import com.example.quizzsus.R;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class QuizActivity extends AppCompatActivity {
 
     private TextView textViewQuestion;
@@ -20,34 +26,7 @@ public class QuizActivity extends AppCompatActivity {
     private RadioButton radioOptionA, radioOptionB, radioOptionC, radioOptionD;
     private Button buttonNext, buttonMainMenu;
 
-    private String[] questions = {
-            "Quais são as principais doenças associadas à obesidade?",
-            "Como hábitos alimentares e atividade física influenciam na prevenção da obesidade?",
-            "Qual das opções abaixo é uma dica para prevenir a obesidade?",
-            "Qual destes fatores é considerado um dos principais causadores da obesidade?",
-            "Como a genética pode influenciar o peso de uma pessoa?",
-            "Qual das alternativas é um benefício da prática regular de exercícios físicos?",
-            "O que pode acontecer se a obesidade não for tratada?",
-            "Qual é a recomendação diária de atividade física para adultos para a manutenção de um peso saudável?",
-            "Qual alimento deve ser evitado para prevenir a obesidade?",
-            "Como o estresse pode afetar o peso de uma pessoa?"
-    };
-
-    private String[][] options = {
-            {"A) Diabetes", "B) Hipertensão", "C) Doenças cardíacas", "D) Todas as anteriores"},
-            {"A) Não influenciam", "B) A boa alimentação e a atividade física regular podem ajudar a prevenir a obesidade", "C) Apenas a atividade física é importante", "D) Apenas a alimentação é importante"},
-            {"A) Comer em excesso", "B) Reduzir o consumo de açúcar e gorduras saturadas", "C) Evitar a prática de exercícios físicos", "D) Fazer refeições irregulares"},
-            {"A) Consumo excessivo de calorias", "B) Hidratação inadequada", "C) Exposição ao sol", "D) Uso de eletrônicos"},
-            {"A) Não tem influência", "B) Pode predispor ao ganho de peso", "C) Apenas influencia o apetite", "D) Gera uma resistência ao emagrecimento"},
-            {"A) Aumento do apetite", "B) Melhora da saúde mental", "C) Estímulo ao sedentarismo", "D) Nenhuma das anteriores"},
-            {"A) Aumento da autoestima", "B) Melhora na saúde geral", "C) Desenvolvimento de doenças crônicas", "D) Nenhuma alteração significativa"},
-            {"A) 30 minutos, 5 vezes por semana", "B) 10 minutos, 2 vezes por semana", "C) 15 minutos, 3 vezes por semana", "D) 60 minutos, diariamente"},
-            {"A) Frutas", "B) Legumes", "C) Refrigerantes", "D) Grãos integrais"},
-            {"A) Não influencia", "B) Pode levar ao ganho de peso", "C) Ajuda a emagrecer", "D) Apenas afeta a saúde mental"}
-    };
-
-    private String[] answers = {"D", "B", "B", "A", "B", "B", "C", "A", "C", "B"};
-
+    private List<Question> questionList; // Lista de perguntas
     private int currentQuestionIndex = 0;
     private int correctCount = 0;
     private int wrongCount = 0;
@@ -72,6 +51,10 @@ public class QuizActivity extends AppCompatActivity {
         buttonNext = findViewById(R.id.buttonNext);
         buttonMainMenu = findViewById(R.id.buttonMainMenu);
 
+        // Carregar e embaralhar perguntas
+        loadQuestions();
+        Collections.shuffle(questionList); // Embaralha as perguntas
+
         // Exibindo a primeira pergunta
         displayQuestion();
 
@@ -82,10 +65,9 @@ public class QuizActivity extends AppCompatActivity {
                 checkAnswer();
                 currentQuestionIndex++;
 
-                if (currentQuestionIndex < questions.length) {
+                if (currentQuestionIndex < questionList.size()) {
                     displayQuestion();
                 } else {
-                    // Salva o score no banco de dados e exibe os resultados
                     saveScoreToDatabase();
                     showResults();
                 }
@@ -103,12 +85,31 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
+    // Carrega perguntas sobre o tema dengue
+    private void loadQuestions() {
+        questionList = new ArrayList<>();
+        questionList.add(new Question("Qual mosquito é o principal transmissor da dengue?", new String[]{"A) Anopheles", "B) Culex", "C) Aedes aegypti", "D) Aedes albopictus"}, "C"));
+        questionList.add(new Question("Qual dos seguintes sintomas é comum na dengue?", new String[]{"A) Tosse", "B) Febre alta", "C) Dor de garganta", "D) Congestão nasal"}, "B"));
+        questionList.add(new Question("Qual é o principal método de prevenção contra a dengue?", new String[]{"A) Tomar vacina", "B) Usar repelente", "C) Eliminar focos de água parada", "D) Tomar vitaminas"}, "C"));
+        questionList.add(new Question("Qual dos seguintes não é um sintoma de dengue?", new String[]{"A) Dor de cabeça", "B) Febre", "C) Dor muscular", "D) Manchas na pele"}, "D"));
+        questionList.add(new Question("Qual período do dia o Aedes aegypti costuma picar mais?", new String[]{"A) Durante a noite", "B) De manhã e ao entardecer", "C) A tarde", "D) Ao meio-dia"}, "B"));
+        questionList.add(new Question("Qual é o ciclo de vida do Aedes aegypti?", new String[]{"A) Ovo, larva, pupa, adulto", "B) Ovo, pupa, larva, adulto", "C) Larva, ovo, pupa, adulto", "D) Adulto, pupa, larva, ovo"}, "A"));
+        questionList.add(new Question("Quanto tempo leva para o Aedes aegypti se tornar adulto?", new String[]{"A) 2 dias", "B) 7 a 10 dias", "C) 15 dias", "D) 1 mês"}, "B"));
+        questionList.add(new Question("Qual destes lugares é o mais comum para a reprodução do mosquito da dengue?", new String[]{"A) Água parada em pneus", "B) Águas correntes", "C) Áreas secas", "D) Áreas com sombra"}, "A"));
+        questionList.add(new Question("Qual é a principal causa do aumento dos casos de dengue em algumas regiões?", new String[]{"A) Falta de vacinas", "B) Aumento da temperatura e umidade", "C) Poluição do ar", "D) Falta de hospitais"}, "B"));
+        questionList.add(new Question("Quantos tipos de vírus da dengue existem?", new String[]{"A) 1", "B) 2", "C) 3", "D) 4"}, "D"));
+        questionList.add(new Question("Qual medida NÃO ajuda a prevenir a dengue?", new String[]{"A) Limpar calhas", "B) Guardar garrafas com a boca para baixo", "C) Deixar pneus ao ar livre", "D) Tampar caixas d'água"}, "C"));
+        // Adicione mais perguntas aqui para enriquecer o banco de perguntas
+    }
+
+    // Exibe a pergunta e as opções
     private void displayQuestion() {
-        textViewQuestion.setText(questions[currentQuestionIndex]);
-        radioOptionA.setText(options[currentQuestionIndex][0]);
-        radioOptionB.setText(options[currentQuestionIndex][1]);
-        radioOptionC.setText(options[currentQuestionIndex][2]);
-        radioOptionD.setText(options[currentQuestionIndex][3]);
+        Question currentQuestion = questionList.get(currentQuestionIndex);
+        textViewQuestion.setText(currentQuestion.getQuestion());
+        radioOptionA.setText(currentQuestion.getOptions()[0]);
+        radioOptionB.setText(currentQuestion.getOptions()[1]);
+        radioOptionC.setText(currentQuestion.getOptions()[2]);
+        radioOptionD.setText(currentQuestion.getOptions()[3]);
         radioGroupOptions.clearCheck();
     }
 
@@ -120,7 +121,8 @@ public class QuizActivity extends AppCompatActivity {
         }
 
         RadioButton selectedOption = findViewById(selectedId);
-        if (selectedOption.getText().toString().startsWith(answers[currentQuestionIndex])) {
+        Question currentQuestion = questionList.get(currentQuestionIndex);
+        if (selectedOption.getText().toString().startsWith(currentQuestion.getCorrectAnswer())) {
             correctCount++;
             Toast.makeText(this, "Correto!", Toast.LENGTH_SHORT).show();
         } else {
@@ -130,12 +132,10 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void saveScoreToDatabase() {
-        // Adiciona os acertos e erros ao banco de dados
         databaseHelper.addScore(correctCount, wrongCount);
     }
 
     private void showResults() {
-        // Passa os resultados para a ResultActivity
         Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
         intent.putExtra("CORRECT_ANSWERS", correctCount);
         intent.putExtra("WRONG_ANSWERS", wrongCount);

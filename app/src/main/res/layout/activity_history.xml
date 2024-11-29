@@ -2,17 +2,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/backgroundColor">
 
+    <!-- Cabeçalho do Histórico -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Histórico de Tentativas"
         android:textSize="24sp"
-        android:paddingBottom="8dp" />
+        android:textColor="@color/textColorPrimary"
+    android:paddingBottom="12dp"
+    android:fontFamily="sans-serif-medium" />
 
+    <!-- Divisória para separar o cabeçalho do conteúdo -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/textColorPrimary"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Lista do Histórico -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewHistory"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp"
+        android:background="@color/cardBackgroundColor" />
 </LinearLayout>

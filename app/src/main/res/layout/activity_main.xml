@@ -3,20 +3,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@color/lightBlue"
+    android:padding="24dp">
+
+    <!-- Título do app -->
+
+    <!-- Botão Iniciar Quiz -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="90dp"
+        android:fontFamily="sans-serif-medium"
+        android:shadowColor="@color/darkBlue"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="1.5"
+        android:text="Quiz sobre Dengue"
+        android:textColor="@color/black"
+        android:textSize="33sp" />
 
     <Button
         android:id="@+id/buttonStartQuiz"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_background"
+        android:elevation="4dp"
         android:text="Iniciar Quiz"
-        android:padding="16dp"
-        android:textSize="18sp"/>
+        android:textColor="@color/white"
+        android:textSize="18sp" />
 
+    <!-- Botão Ver Histórico -->
     <Button
         android:id="@+id/buttonViewH"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ver Histórico" />
+        android:text="Ver Histórico"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:background="@drawable/button_background"
+        android:elevation="4dp"/>
 
+    <Button
+        android:id="@+id/buttonCuriosities"
+        android:layout_width="191dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:elevation="4dp"
+        android:text="Curiosidades sobre Dengue"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/buttonDengueCases"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:elevation="4dp"
+        android:text="Casos de Dengue"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
 </LinearLayout>

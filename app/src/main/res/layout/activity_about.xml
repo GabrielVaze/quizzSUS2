@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@color/lightBlue">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sobre o Aplicativo"
+        android:textSize="26sp"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginBottom="32dp"
+        android:shadowColor="@color/darkBlue"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="1.5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Este aplicativo foi desenvolvido para ajudar na conscientização sobre a dengue."
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desenvolvedor: Seu Nome"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="16dp" />
+</LinearLayout>

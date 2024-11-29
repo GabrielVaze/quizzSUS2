@@ -2,26 +2,35 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="12dp"
+    android:background="@color/cardBackgroundColor"
+    android:layout_marginBottom="8dp"
+    android:elevation="4dp">
 
-    <TextView
-        android:id="@+id/textViewC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Corretas: "
-        android:textSize="16sp" />
+<TextView
+android:id="@+id/textViewD"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Data: "
+android:textColor="@color/textColorPrimary"
+    android:textSize="16sp"
+    android:fontFamily="sans-serif-medium" />
 
-    <TextView
-        android:id="@+id/textViewW"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Erradas: "
-        android:textSize="16sp" />
+<TextView
+android:id="@+id/textViewC"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Corretas: "
+android:textColor="@color/textColorSecondary"
+    android:textSize="14sp"
+    android:paddingTop="4dp" />
 
-    <TextView
-        android:id="@+id/textViewD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Data: "
-        android:textSize="14sp" />
-</LinearLayout>
+<TextView
+android:id="@+id/textViewW"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Erradas: "
+android:textColor="@color/textColorSecondary"
+    android:textSize="14sp"
+    android:paddingTop="2dp" />
+    </LinearLayout>

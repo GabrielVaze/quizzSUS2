@@ -4,16 +4,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#f1f1f1">
+    android:background="#E3F2FD">
 
     <TextView
         android:id="@+id/textViewQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pergunta"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginBottom="20dp" />
+        android:textColor="#0D47A1"
+    android:layout_marginBottom="16dp" />
 
     <RadioGroup
         android:id="@+id/radioGroupOptions"
@@ -25,25 +26,37 @@
             android:id="@+id/radioOptionA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Opção A" />
+            android:text="Opção A"
+            android:textColor="#0D47A1"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp" />
 
         <RadioButton
             android:id="@+id/radioOptionB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Opção B" />
+            android:text="Opção B"
+            android:textColor="#0D47A1"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp" />
 
         <RadioButton
             android:id="@+id/radioOptionC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Opção C" />
+            android:text="Opção C"
+            android:textColor="#0D47A1"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp" />
 
         <RadioButton
             android:id="@+id/radioOptionD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Opção D" />
+            android:text="Opção D"
+            android:textColor="#0D47A1"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp" />
     </RadioGroup>
 
     <Button
@@ -51,12 +64,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Próxima"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FF8A65"
+    android:textColor="#FFFFFF"
+    android:padding="12dp" />
 
     <Button
         android:id="@+id/buttonMainMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Menu Principal" />
-
+        android:text="Menu Principal"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#81D4FA"
+    android:textColor="#0D47A1"
+    android:padding="12dp" />
 </LinearLayout>
