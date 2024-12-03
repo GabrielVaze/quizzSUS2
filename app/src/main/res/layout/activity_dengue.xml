@@ -18,6 +18,12 @@
         android:text="Atualizar Dados" />
 
 
+    <ImageView
+        android:id="@+id/imgGraficoDengue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:src="@drawable/grafico_dengue" />
 
 
 </LinearLayout>
